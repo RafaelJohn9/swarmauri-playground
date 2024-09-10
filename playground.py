@@ -125,7 +125,7 @@ llm_kwargs = {{
 }}
 
 # messages
-messages = {[f'HumanMessage(content={message.content})' if message.type=='HumanMessage' else f'HumanMessage(content={message.content})' for message in conversation.history]}
+messages = {[f'HumanMessage(content={message.content})' if message.type=='HumanMessage' else f'AgentMessage(content={message.content})' for message in conversation.history]}
 
 # prediction
 model.predict(conversation=conversation, **llm_kwargs)
